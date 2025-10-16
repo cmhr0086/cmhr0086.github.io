@@ -52,7 +52,6 @@ h1 {
 }
 
 .old-domain {
-    text-decoration: line-through;
     color: #888;
     font-size: 1.1em;
     display: block;
