@@ -3,192 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css?v=1.594">
-    <title>我们的域名已迁移 - CMHR</title>
+    <title>【重要更新】域名已迁移 - CMHR</title>
     
-    <style>
-        /* ==================== 全局重置与基础样式 ==================== */
-        *, *::before, *::after {
-            /* 关键修复：确保 padding 和 border 不会增加元素的总宽度 */
-            box-sizing: border-box; 
-        }
+    <link rel="stylesheet" href="./css/styles.css?v=1.0">
 
-        :root {
-            --primary-color: #007bff; 
-            --secondary-color: #28a745; 
-            --text-color: #333;
-            --background-color: #f8f9fa;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px; /* 确保 body 在边缘留有空间 */
-            background-color: var(--background-color);
-            text-align: center;
-            color: var(--text-color);
-        }
-
-        .container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            max-width: 550px; /* 略微调整最大宽度 */
-            width: 100%; /* 宽度占满父容器，但在 max-width 范围内 */
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
-        h1 {
-            color: var(--primary-color);
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-        
-        /* 突出新域名的区域 */
-        .domain-change-box {
-            background-color: #e9ecef;
-            border-radius: 8px;
-            padding: 20px 15px;
-            margin: 25px 0;
-        }
-
-        .old-domain {
-            text-decoration: line-through;
-            color: #888;
-            font-size: 1.1em;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .new-domain-wrapper {
-            font-size: 1.8em; 
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin: 10px 0;
-        }
-        
-        .arrow {
-            color: var(--primary-color);
-            font-size: 1.5em;
-            margin: 0 10px;
-        }
-
-        /* ==================== 按钮样式优化 ==================== */
-        .jump-button {
-            /* 确保居中和块级显示 */
-            display: block; 
-            margin: 25px auto; 
-            
-            /* 重新调整宽度策略 */
-            width: 90%; /* 在电脑端和手机端都先设置 90% 宽度 */
-            max-width: 380px; /* 限制按钮在超宽屏上的最大宽度 */
-
-            padding: 15px 30px;
-            font-size: 20px;
-            font-weight: 600;
-            color: #ffffff;
-            
-            background: linear-gradient(45deg, var(--primary-color) 0%, #0056b3 100%);
-            border: none;
-            border-radius: 50px; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            animation: pulse 1.8s infinite;
-        }
-
-        .jump-button:hover {
-            background: linear-gradient(45deg, #0056b3 0%, var(--primary-color) 100%);
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        #countdown {
-            margin-top: 25px;
-            font-size: 16px;
-            color: #6c757d;
-        }
-        
-        /* ==================== 关键帧动画 ==================== */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(0, 123, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); }
-        }
-
-        /* ==================== 响应式设计 (手机端优化) ==================== */
-        @media (max-width: 768px) {
-            body {
-                padding: 10px; /* 手机端减少 body padding */
-            }
-
-            .container {
-                padding: 30px 20px; /* 手机端减少容器 padding */
-                box-shadow: none; 
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-            
-            .new-domain-wrapper {
-                font-size: 1.4em; 
-            }
-
-            .jump-button {
-                /* 手机上强制宽度接近满屏 */
-                width: 100%; 
-                /* 取消最大宽度限制，让 100% 生效 */
-                max-width: 100%; 
-                font-size: 18px;
-            }
-        }
-    </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>我们的域名已更新</h1>
+    <h1>【重要通知】域名已更新！</h1>
     
     <p>
-        我们启用了全新的备案域名<br><br>
-        用户体验更进一步
-    </p>
+        尊敬的用户，感谢您的支持！<br>
+        我们的官方网址已正式迁移。
+    </p >
 
     <div class="domain-change-box">
         <span class="old-domain">cmhr.cc</span> 
         <div class="arrow">↓</div>
         <div class="new-domain-wrapper">
-             <a href="https://cmhr.work" style="color: inherit; text-decoration: none;">cmhr.work</a>
+            🎉 <a href=" " style="color: inherit; text-decoration: none;">cmhr.work</a >
         </div>
     </div>
 
     <a id="jump-button-link" href="https://cmhr.work" class="jump-button">
         立即前往新网站
-    </a>
+    </a >
 
     <p id="countdown">
-        页面将在 <strong id="timer">8</strong> 秒后自动跳转...
-    </p>
+        页面将在 <strong id="timer">5</strong> 秒后自动跳转...
+    </p >
 </div>
 
 <script>
     // JavaScript 自动跳转部分
     const newDomainUrl = 'https://cmhr.work';
-    let timeLeft = 8; 
+    let timeLeft = 5; 
     const timerElement = document.getElementById('timer');
 
     function updateCountdown() {
