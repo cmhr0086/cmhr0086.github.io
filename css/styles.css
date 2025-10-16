@@ -1,0 +1,146 @@
+/* ==================== 全局重置与基础样式 ==================== */
+*, *::before, *::after {
+    /* 确保 padding 和 border 不会增加元素的总宽度 */
+    box-sizing: border-box; 
+}
+
+:root {
+    /* 定义颜色变量，便于维护 */
+    --primary-color: #007bff; 
+    --secondary-color: #28a745; 
+    --text-color: #333;
+    --background-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px; /* 确保 body 在边缘留有空间 */
+    background-color: var(--background-color);
+    text-align: center;
+    color: var(--text-color);
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-width: 550px; 
+    width: 100%; 
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* 突出新域名的区域 */
+.domain-change-box {
+    background-color: #e9ecef;
+    border-radius: 8px;
+    padding: 20px 15px;
+    margin: 25px 0;
+}
+
+.old-domain {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.new-domain-wrapper {
+    font-size: 1.8em; 
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin: 10px 0;
+}
+
+.arrow {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin: 0 10px;
+}
+
+/* ==================== 按钮样式优化 ==================== */
+.jump-button {
+    display: block; 
+    margin: 25px auto; 
+    
+    width: 90%; 
+    max-width: 380px; 
+
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    
+    background: linear-gradient(45deg, var(--primary-color) 0%, #0056b3 100%);
+    border: none;
+    border-radius: 50px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: pulse 1.8s infinite;
+}
+
+.jump-button:hover {
+    background: linear-gradient(45deg, #0056b3 0%, var(--primary-color) 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#countdown {
+    margin-top: 25px;
+    font-size: 16px;
+    color: #6c757d;
+}
+
+/* ==================== 关键帧动画 ==================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(0, 123, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); }
+}
+
+/* ==================== 响应式设计 (手机端优化) ==================== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; 
+    }
+
+    .container {
+        padding: 30px 20px; 
+        box-shadow: none; 
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+    
+    .new-domain-wrapper {
+        font-size: 1.4em; 
+    }
+
+    .jump-button {
+        width: 100%; 
+        max-width: 100%; 
+        font-size: 18px;
+    }
+}
