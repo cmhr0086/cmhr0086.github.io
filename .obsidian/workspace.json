@@ -182,6 +182,10 @@
   },
   "active": "1dfef4e1c31a3c71",
   "lastOpenFiles": [
+    "templates/Hexo-笔记分类.md",
+    "templates/Hexo-随笔分类.md",
+    "templates/未命名.md",
+    "source/_posts/hello-world.md",
     "source/_posts/wg-easy-v15配置&注意事项.md",
     "source/categories/index.md",
     "db.json",
@@ -202,7 +206,6 @@
     "public/images/apple-touch-icon-next.png",
     "public/images/avatar.gif",
     "source/images/avatar.jpg",
-    "source/tags/index.md",
-    "templates/Hexo-笔记分类.md"
+    "source/tags/index.md"
   ]
 }
