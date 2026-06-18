@@ -1,4 +1,4 @@
-scheme: Muse
+scheme: Gemini
 
 menu:
   home: / || fa fa-home
@@ -18,9 +18,22 @@ footer:
     color: '#808080'
   powered: true
 
-darkmode: false
+darkmode: true
+
+lightdark:
+  enable: false
+
+sidebar:
+  position: left
+  display: hide
+
+avatar:
+  url: /images/avatar.jpg
+  rounded: true
+  rotated: false
 
 social:
+  GitHub: https://github.com/cmhr0086 || fab fa-github
 social_icons:
   enable: true
   icons_only: false
@@ -41,10 +54,22 @@ symbols_count_time:
 codeblock:
   copy_button:
     enable: true
+    style: mac
     show_result: true
+  language: true
+
+reading_progress:
+  enable: true
+  start_at: left
+  position: top
+  reversed: false
+  color: '#37c6c0'
+  height: 3px
 
 back2top:
   enable: true
   sidebar: false
   scrollpercent: true
 
+font:
+  enable: false
