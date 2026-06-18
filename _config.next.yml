@@ -2,6 +2,7 @@ scheme: Gemini
 
 menu:
   home: / || fa fa-home
+  文章: /articles/ || fa fa-book
   archives: /archives/ || fa fa-archive
   categories: /categories/ || fa fa-th
   tags: /tags/ || fa fa-tags

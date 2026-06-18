@@ -8,6 +8,7 @@ timezone: Asia/Shanghai
 
 url: https://cmhr.cc
 root: /
+homepage_post: hello-world
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -44,7 +45,7 @@ highlight:
   hljs: false
 
 index_generator:
-  path: ''
+  path: articles
   per_page: 10
   order_by: -date
 
@@ -63,4 +64,3 @@ exclude:
 ignore:
 
 theme: next
-
