@@ -1,0 +1,50 @@
+scheme: Muse
+
+menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  categories: /categories/ || fa fa-th
+  tags: /tags/ || fa fa-tags
+
+menu_settings:
+  icons: true
+  badges: false
+
+footer:
+  since: 2026
+  icon:
+    name: fa fa-heart
+    animated: false
+    color: '#808080'
+  powered: true
+
+darkmode: false
+
+social:
+social_icons:
+  enable: true
+  icons_only: false
+  transition: false
+
+post_meta:
+  item_text: true
+  created_at: true
+  updated_at:
+    enable: true
+    another_day: true
+  categories: true
+
+symbols_count_time:
+  separated_meta: true
+  item_text: true
+
+codeblock:
+  copy_button:
+    enable: true
+    show_result: true
+
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: true
+
