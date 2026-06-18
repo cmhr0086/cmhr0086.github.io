@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/再写一个.md",
+                "file": "source/_posts/wg-easy-v15配置&注意事项.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "再写一个"
+              "title": "wg-easy-v15配置&注意事项"
             }
           }
         ]
@@ -185,7 +185,7 @@
     "source/images/avatar.jpg",
     "source/categories/index.md",
     "source/tags/index.md",
-    "source/_posts/再写一个.md",
+    "source/_posts/wg-easy-v15配置&注意事项.md",
     "templates/Hexo-笔记分类.md",
     "templates"
   ]

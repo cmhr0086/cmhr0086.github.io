@@ -1,9 +1,10 @@
 ---
-title: "未命名"
+title: wg-easy-v15配置&注意事项
 date: 2026-06-18 20:08:47
 categories:
   - 笔记
-tags: []
+tags:
+  - Wireguard
 ---
 
 ## 摘要
