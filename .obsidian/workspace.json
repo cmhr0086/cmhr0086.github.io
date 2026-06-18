@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/wg-easy-v15配置&注意事项.md",
+                "file": "source/_posts/hello-world.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "wg-easy-v15配置&注意事项"
+              "title": "hello-world"
             }
           }
         ]
@@ -182,11 +182,27 @@
   },
   "active": "1dfef4e1c31a3c71",
   "lastOpenFiles": [
-    "source/images/avatar.jpg",
-    "source/categories/index.md",
-    "source/tags/index.md",
     "source/_posts/wg-easy-v15配置&注意事项.md",
-    "templates/Hexo-笔记分类.md",
-    "templates"
+    "source/categories/index.md",
+    "db.json",
+    "public/2026/06/18/wg-easy-v15配置&注意事项/index.html",
+    "public/2026/06/18/hello-world/index.html",
+    "public/2026/06/18/wg-easy-v15配置&注意事项",
+    "public/2026/06/18/hello-world",
+    "public/2026/06/18",
+    "public/2026/06",
+    "public/2026",
+    "public/CNAME",
+    "public/index.html",
+    "public/images/logo-algolia-nebula-blue-full.svg",
+    "public/images/logo.svg",
+    "public/images/favicon-16x16-next.png",
+    "public/images/favicon-32x32-next.png",
+    "public/images/avatar.jpg",
+    "public/images/apple-touch-icon-next.png",
+    "public/images/avatar.gif",
+    "source/images/avatar.jpg",
+    "source/tags/index.md",
+    "templates/Hexo-笔记分类.md"
   ]
 }
