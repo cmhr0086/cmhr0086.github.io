@@ -202,8 +202,8 @@ onBeforeUnmount(() => {
           max-width: 100%;
         }
         &.mobile-sites-open {
-          align-items: flex-start;
-          padding-top: max(20px, env(safe-area-inset-top));
+          align-items: center;
+          padding-bottom: calc(122px + env(safe-area-inset-bottom));
         }
       }
       .more {
@@ -218,7 +218,7 @@ onBeforeUnmount(() => {
       align-items: center;
       left: 20px;
       right: 20px;
-      bottom: calc(82px + env(safe-area-inset-bottom));
+      bottom: calc(66px + env(safe-area-inset-bottom));
       width: auto;
       height: 56px;
       padding: 0 16px;
@@ -273,7 +273,9 @@ onBeforeUnmount(() => {
           margin-bottom: auto;
         }
         &.mobile-sites-open {
-          padding-top: max(20px, env(safe-area-inset-top));
+          align-items: flex-start;
+          padding-top: max(16px, env(safe-area-inset-top));
+          padding-bottom: calc(118px + env(safe-area-inset-bottom));
           > * {
             margin-top: 0;
             margin-bottom: 0;
