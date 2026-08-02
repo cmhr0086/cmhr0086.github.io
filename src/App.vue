@@ -7,7 +7,10 @@
   <Transition name="fade" mode="out-in">
     <main id="main" v-if="store.imgLoadStatus">
       <div class="container" v-show="!store.backgroundShow">
-        <section class="all" v-show="!store.setOpenState">
+        <section
+          :class="{ all: true, 'mobile-sites-open': store.mobileOpenState }"
+          v-show="!store.setOpenState"
+        >
           <MainLeft />
           <MainRight v-show="!store.boxOpenState" />
           <Box v-show="store.boxOpenState" />
@@ -198,6 +201,10 @@ onBeforeUnmount(() => {
           min-width: 0;
           max-width: 100%;
         }
+        &.mobile-sites-open {
+          align-items: flex-start;
+          padding-top: max(20px, env(safe-area-inset-top));
+        }
       }
       .more {
         width: 100%;
@@ -264,6 +271,13 @@ onBeforeUnmount(() => {
           flex-shrink: 0;
           margin-top: auto;
           margin-bottom: auto;
+        }
+        &.mobile-sites-open {
+          padding-top: max(20px, env(safe-area-inset-top));
+          > * {
+            margin-top: 0;
+            margin-bottom: 0;
+          }
         }
         &::-webkit-scrollbar {
           display: none;

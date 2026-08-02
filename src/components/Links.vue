@@ -4,7 +4,7 @@
       <Icon size="20">
         <Link />
       </Icon>
-      <span class="title">网站列表</span>
+      <span class="title"> 网站列表<span class="swipe-hint">-可以左右滑动翻页</span> </span>
     </div>
     <!-- 网站列表 -->
     <Swiper
@@ -64,7 +64,7 @@ import siteLinks from "@/assets/siteLinks.json";
 const store = mainStore();
 
 // 计算网站链接
-const linksPerPage = computed(() => (store.innerWidth !== null && store.innerWidth <= 720 ? 4 : 6));
+const linksPerPage = computed(() => 6);
 
 const siteLinksList = computed(() => {
   const result = [];
@@ -113,10 +113,22 @@ onMounted(() => {
     .title {
       margin-left: 8px;
       font-size: 1.15rem;
+      white-space: nowrap;
       text-shadow: 0 0 5px #00000050;
+      .swipe-hint {
+        display: none;
+      }
     }
     @media (max-width: 720px) {
       margin: 1rem 0.25rem 0.75rem;
+      .title {
+        .swipe-hint {
+          display: inline;
+          font-size: 0.85rem;
+          font-weight: 400;
+          opacity: 0.75;
+        }
+      }
     }
   }
   .swiper {
@@ -179,7 +191,7 @@ onMounted(() => {
         font-size: 1.1rem;
         margin-left: 8px;
       }
-      @media (min-width: 720px) and (max-width: 820px) {
+      @media (min-width: 721px) and (max-width: 820px) {
         .name {
           display: none;
         }
@@ -196,7 +208,7 @@ onMounted(() => {
       }
     }
     @media (max-width: 720px) {
-      height: 254px;
+      height: 386px;
       margin-right: 0 !important;
       margin-left: 0 !important;
       align-content: flex-start;
