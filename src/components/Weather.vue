@@ -90,7 +90,7 @@ const getWeatherData = async () => {
       };
     }
   } catch (error) {
-    console.error("天气信息获取失败:" + error);
+    console.error("美好的一天！" + error);
     onError("美好的一天！");
   }
 };

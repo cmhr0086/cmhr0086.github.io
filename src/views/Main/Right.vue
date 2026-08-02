@@ -52,17 +52,17 @@ const siteUrl = computed(() => {
     @media (min-width: 721px) {
       display: none;
     }
-    @media (max-height: 720px) {
-      width: calc(100% + 6px);
-      top: 43.26px; // 721px * 0.06
+    @media (max-width: 720px) {
+      top: max(6%, calc(env(safe-area-inset-top) + 12px));
     }
-    @media (max-width: 390px) {
-        width: 391px;
+    @media (max-width: 720px) and (max-height: 680px) {
+      display: none;
     }
   }
   @media (max-width: 720px) {
     margin-left: 0;
     width: 100%;
+    min-width: 0;
     &.hidden {
       display: none;
     }

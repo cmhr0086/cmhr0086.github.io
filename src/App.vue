@@ -16,15 +16,20 @@
           <MoreSet />
         </section>
       </div>
-      <!-- 移动端菜单按钮 -->
-      <Icon
-        class="menu"
-        size="24"
-        v-show="!store.backgroundShow"
+      <!-- 移动端页面切换 -->
+      <button
+        class="mobile-nav"
+        type="button"
+        v-show="!store.backgroundShow && !store.setOpenState"
+        :aria-label="mobileNavLabel"
+        :aria-pressed="store.mobileOpenState"
         @click="store.mobileOpenState = !store.mobileOpenState"
       >
-        <component :is="store.mobileOpenState ? CloseSmall : HamburgerButton" />
-      </Icon>
+        <Icon class="mobile-nav__icon" size="22">
+          <component :is="store.mobileOpenState ? Home : AllApplication" />
+        </Icon>
+        <span class="mobile-nav__label">{{ mobileNavLabel }}</span>
+      </button>
       <!-- 页脚 -->
       <Transition name="fade" mode="out-in">
         <Footer class="f-ter" v-show="!store.backgroundShow && !store.setOpenState" />
@@ -35,7 +40,7 @@
 
 <script setup>
 import { helloInit, checkDays } from "@/utils/getTime.js";
-import { HamburgerButton, CloseSmall } from "@icon-park/vue-next";
+import { AllApplication, Home } from "@icon-park/vue-next";
 import { mainStore } from "@/store";
 import { Icon } from "@vicons/utils";
 import Loading from "@/components/Loading.vue";
@@ -49,6 +54,7 @@ import cursorInit from "@/utils/cursor.js";
 import config from "@/../package.json";
 
 const store = mainStore();
+const mobileNavLabel = computed(() => (store.mobileOpenState ? "返回主页" : "查看站点"));
 
 // 页面宽度
 const getWidth = () => {
@@ -166,88 +172,148 @@ onBeforeUnmount(() => {
       padding: 0 2vw;
     }
   }
-  .menu {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 84%;
-    left: calc(50% - 28px);
-    width: 56px;
-    height: 34px;
-    background: rgb(0 0 0 / 20%);
-    backdrop-filter: blur(10px);
-    border-radius: 6px;
-    transition: transform 0.3s;
-    animation: fade 0.5s;
-    &:active {
-      transform: scale(0.95);
-    }
-    .i-icon {
-      transform: translateY(2px);
-    }
-    @media (min-width: 721px) {
-      display: none;
-    }
+  .mobile-nav {
+    display: none;
   }
-  @media (max-height: 720px) {
-    overflow-y: auto;
-    overflow-x: hidden;
+  @media (max-width: 720px) {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
     .container {
-      height: 721px;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      min-width: 0;
+      max-width: none;
+      padding: 0 20px;
+      overflow: hidden;
+      .all {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 0;
+        overflow: hidden;
+        > * {
+          min-width: 0;
+          max-width: 100%;
+        }
+      }
       .more {
-        height: 721px;
-        width: calc(100% + 6px);
-      }
-      @media (min-width: 391px) {
-        // w 1201px ~ max
-        padding-left: 0.7vw;
-        padding-right: 0.25vw;
-        @media (max-width: 1200px) { // w 1101px ~ 1280px
-          padding-left: 2.3vw;
-          padding-right: 1.75vw;
-        }
-        @media (max-width: 1100px) { // w 993px ~ 1100px
-          padding-left: 2vw;
-          padding-right: calc(2vw - 6px);
-        }
-        @media (max-width: 992px) { // w 901px ~ 992px
-          padding-left: 2.3vw;
-          padding-right: 1.7vw;
-        }
-        @media (max-width: 900px) { // w 391px ~ 900px
-          padding-left: 2vw;
-          padding-right: calc(2vw - 6px);
-        }
+        width: 100%;
+        height: 100%;
       }
     }
-    .menu {
-      top: 605.64px; // 721px * 0.84
-      left: 170.5px; // 391 * 0.5 - 25px
-      @media (min-width: 391px) {
-        left: calc(50% - 25px);
+    .mobile-nav {
+      position: absolute;
+      display: grid;
+      grid-template-columns: 24px 1fr 24px;
+      align-items: center;
+      left: 50%;
+      bottom: calc(82px + env(safe-area-inset-bottom));
+      width: 190px;
+      height: 56px;
+      padding: 0 16px;
+      border: 1px solid rgb(255 255 255 / 16%);
+      border-radius: 8px;
+      background: rgb(0 0 0 / 38%);
+      backdrop-filter: blur(12px);
+      color: #fff;
+      font: inherit;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0;
+      cursor: pointer;
+      z-index: 3;
+      transform: translateX(-50%);
+      transition:
+        background-color 0.2s,
+        border-color 0.2s,
+        transform 0.2s;
+      animation: fade 0.5s;
+      &:hover {
+        background: rgb(0 0 0 / 50%);
+        border-color: rgb(255 255 255 / 28%);
       }
-    }
-    .f-ter {
-      top: 675px; // 721px - 46px
-      @media (min-width: 391px) {
-        padding-left: 6px;
+      &:focus-visible {
+        outline: 2px solid rgb(255 255 255 / 90%);
+        outline-offset: 3px;
+      }
+      &:active {
+        transform: translateX(-50%) scale(0.97);
+      }
+      .mobile-nav__icon {
+        grid-column: 1;
+        justify-self: center;
+        align-self: center;
+        line-height: 1;
+      }
+      .mobile-nav__label {
+        grid-column: 2;
+        justify-self: center;
+        align-self: center;
+        line-height: 1;
+        white-space: nowrap;
+      }
+      &::after {
+        content: "";
+        grid-column: 3;
+        width: 24px;
+        height: 1px;
       }
     }
   }
-  @media (max-width: 390px) {
-    overflow-x: auto;
+  @media (max-width: 720px) and (max-height: 680px) {
     .container {
-      width: 391px;
+      .all {
+        align-items: flex-start;
+        padding-top: max(16px, env(safe-area-inset-top));
+        padding-bottom: calc(118px + env(safe-area-inset-bottom));
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior-y: contain;
+        scrollbar-width: none;
+        > * {
+          flex-shrink: 0;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+        &::-webkit-scrollbar {
+          display: none;
+          width: 0;
+          height: 0;
+        }
+      }
     }
-    .menu {
-      left: 167.5px; // 391px * 0.5 - 28px
+    .mobile-nav {
+      bottom: calc(58px + env(safe-area-inset-bottom));
+      width: 180px;
+      height: 52px;
     }
-    .f-ter {
-      width: 391px;
-    }
-    @media (min-height: 721px) {
-      overflow-y: hidden;
+  }
+  @media (min-width: 721px) and (max-height: 680px) {
+    .container {
+      height: 100vh;
+      height: 100dvh;
+      overflow: hidden;
+      .all {
+        align-items: flex-start;
+        padding-top: 16px;
+        padding-bottom: 62px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        scrollbar-width: none;
+        > * {
+          flex-shrink: 0;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+        &::-webkit-scrollbar {
+          display: none;
+          width: 0;
+          height: 0;
+        }
+      }
     }
   }
 }
