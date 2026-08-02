@@ -1,7 +1,7 @@
 <template>
   <div :class="store.mobileOpenState ? 'right' : 'right hidden'">
     <!-- 移动端 Logo -->
-    <div class="logo text-hidden" @click="store.mobileFuncState = !store.mobileFuncState">
+    <div class="logo text-hidden">
       <span class="bg">{{ siteUrl[0] }}</span>
       <span class="sm">.{{ siteUrl[1] }}</span>
     </div>
@@ -44,11 +44,7 @@ const siteUrl = computed(() => {
     top: 6%;
     left: 0;
     text-align: center;
-    transition: transform 0.3s;
     animation: fade 0.5s;
-    &:active {
-      transform: scale(0.95);
-    }
     @media (min-width: 721px) {
       display: none;
     }

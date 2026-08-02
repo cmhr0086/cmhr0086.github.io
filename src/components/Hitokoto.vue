@@ -124,5 +124,19 @@ onMounted(() => {
       font-size: 1.1rem;
     }
   }
+  @media (max-width: 720px) {
+    padding: 14px 16px;
+    .content {
+      .text {
+        font-size: 1rem;
+        line-height: 1.35;
+        -webkit-line-clamp: 2;
+      }
+      .from {
+        margin-top: 6px;
+        font-size: 0.95rem;
+      }
+    }
+  }
 }
 </style>

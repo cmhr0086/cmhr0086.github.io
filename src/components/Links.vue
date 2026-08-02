@@ -8,6 +8,7 @@
     </div>
     <!-- 网站列表 -->
     <Swiper
+      :key="linksPerPage"
       v-if="siteLinks[0]"
       :modules="[Pagination, Mousewheel]"
       :slides-per-view="1"
@@ -21,7 +22,7 @@
     >
       <SwiperSlide v-for="site in siteLinksList" :key="site">
         <el-row class="link-all" :gutter="20">
-          <el-col v-for="(item, index) in site" :span="8" :key="item">
+          <el-col v-for="(item, index) in site" :span="8" :key="item.link">
             <div
               class="item cards"
               :style="index < 3 ? 'margin-bottom: 20px' : null"
@@ -43,7 +44,18 @@
 <script setup>
 import { Icon } from "@vicons/utils";
 // 可前往 https://www.xicons.org 自行挑选并在此处引入
-import { Link, Blog, CompactDisc, Cloud, Compass, Book, Fire, Image, LaptopCode, FileTrayFull } from "@vicons/fa"; // 注意使用正确的类别
+import {
+  Link,
+  Blog,
+  CompactDisc,
+  Cloud,
+  Compass,
+  Book,
+  Fire,
+  Image as ImageIcon,
+  LaptopCode,
+  FileArchive,
+} from "@vicons/fa"; // 注意使用正确的类别
 import { mainStore } from "@/store";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Mousewheel } from "swiper/modules";
@@ -52,10 +64,12 @@ import siteLinks from "@/assets/siteLinks.json";
 const store = mainStore();
 
 // 计算网站链接
+const linksPerPage = computed(() => (store.innerWidth !== null && store.innerWidth <= 720 ? 4 : 6));
+
 const siteLinksList = computed(() => {
   const result = [];
-  for (let i = 0; i < siteLinks.length; i += 6) {
-    const subArr = siteLinks.slice(i, i + 6);
+  for (let i = 0; i < siteLinks.length; i += linksPerPage.value) {
+    const subArr = siteLinks.slice(i, i + linksPerPage.value);
     result.push(subArr);
   }
   return result;
@@ -69,7 +83,9 @@ const siteIcon = {
   Compass,
   Book,
   Fire,
+  Image: ImageIcon,
   LaptopCode,
+  FileArchive,
 };
 
 // 链接跳转
@@ -98,6 +114,9 @@ onMounted(() => {
       margin-left: 8px;
       font-size: 1.15rem;
       text-shadow: 0 0 5px #00000050;
+    }
+    @media (max-width: 720px) {
+      margin: 1rem 0.25rem 0.75rem;
     }
   }
   .swiper {
@@ -128,6 +147,9 @@ onMounted(() => {
         &:hover {
           opacity: 1;
         }
+      }
+      @media (max-width: 720px) {
+        margin-top: 8px;
       }
     }
   }
@@ -163,19 +185,28 @@ onMounted(() => {
         }
       }
       @media (max-width: 720px) {
-        height: 80px;
-      }
-      @media (max-width: 460px) {
-        flex-direction: column;
+        height: 56px;
+        margin-bottom: 0 !important;
+        flex-direction: row;
         .name {
           font-size: 1rem;
-          margin-left: 0;
-          margin-top: 8px;
+          margin-left: 8px;
+          margin-top: 0;
         }
       }
     }
     @media (max-width: 720px) {
-      height: 180px;
+      height: 254px;
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+      align-content: flex-start;
+      row-gap: 10px;
+      :deep(.el-col) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+      }
     }
   }
 }

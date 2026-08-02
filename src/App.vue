@@ -18,7 +18,7 @@
       </div>
       <!-- 移动端页面切换 -->
       <button
-        class="mobile-nav"
+        class="mobile-nav cards"
         type="button"
         v-show="!store.backgroundShow && !store.setOpenState"
         :aria-label="mobileNavLabel"
@@ -209,15 +209,14 @@ onBeforeUnmount(() => {
       display: grid;
       grid-template-columns: 24px 1fr 24px;
       align-items: center;
-      left: 50%;
+      left: 20px;
+      right: 20px;
       bottom: calc(82px + env(safe-area-inset-bottom));
-      width: 190px;
+      width: auto;
       height: 56px;
       padding: 0 16px;
-      border: 1px solid rgb(255 255 255 / 16%);
-      border-radius: 8px;
-      background: rgb(0 0 0 / 38%);
-      backdrop-filter: blur(12px);
+      border: 0;
+      appearance: none;
       color: #fff;
       font: inherit;
       font-size: 16px;
@@ -225,22 +224,10 @@ onBeforeUnmount(() => {
       letter-spacing: 0;
       cursor: pointer;
       z-index: 3;
-      transform: translateX(-50%);
-      transition:
-        background-color 0.2s,
-        border-color 0.2s,
-        transform 0.2s;
       animation: fade 0.5s;
-      &:hover {
-        background: rgb(0 0 0 / 50%);
-        border-color: rgb(255 255 255 / 28%);
-      }
       &:focus-visible {
         outline: 2px solid rgb(255 255 255 / 90%);
         outline-offset: 3px;
-      }
-      &:active {
-        transform: translateX(-50%) scale(0.97);
       }
       .mobile-nav__icon {
         grid-column: 1;
@@ -287,7 +274,6 @@ onBeforeUnmount(() => {
     }
     .mobile-nav {
       bottom: calc(58px + env(safe-area-inset-bottom));
-      width: 180px;
       height: 52px;
     }
   }
