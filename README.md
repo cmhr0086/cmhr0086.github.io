@@ -179,11 +179,10 @@ VITE_SONG_ID = "7452421335"
 
 ### 字体
 
-现采用 `HarmonyOS Sans` 开源字体，采用字体拆分，提升加载速度
+现采用 `HarmonyOS Sans` 字体，并通过 Unicode 分片减少页面实际加载的字体体积。
 
-> 由于本站 `CDN` 已开启防盗链，**非本站域名不可访问**，请将字体引入链接更改为下方内容，否则 **自定义字体将失效**
->
-> `https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css`
+字体样式和分片文件托管在 `public/font/HarmonyOS_Sans`，页面使用
+`/font/HarmonyOS_Sans/regular.min.css` 引入，不依赖第三方字体 CDN。
 
 <details>
 <summary>旧版方式</summary>
