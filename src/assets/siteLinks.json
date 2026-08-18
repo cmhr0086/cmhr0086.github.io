@@ -23,5 +23,10 @@
     "icon": "Book",
     "name": "娱乐四件套",
     "link": "https://m.cmhr.work/"
+  },
+  {
+    "icon": "Film",
+    "name": "在线影视",
+    "link": "https://mu.cmhr.cc/"
   }
 ]
