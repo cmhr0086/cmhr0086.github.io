@@ -201,11 +201,20 @@ onMounted(() => {
       @media (max-width: 720px) {
         height: 56px;
         margin-bottom: 0 !important;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 32px minmax(0, 1fr) 32px;
+        padding: 0 16px;
+        > :deep(.xicon) {
+          grid-column: 1;
+          justify-self: start;
+        }
         .name {
+          grid-column: 2;
+          width: 100%;
           font-size: 1rem;
-          margin-left: 8px;
+          margin-left: 0;
           margin-top: 0;
+          text-align: center;
         }
       }
     }
