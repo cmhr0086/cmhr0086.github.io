@@ -26,7 +26,7 @@
 
 ![無名の主页](/screenshots/main.jpg)
 
-> 主页的 Logo 字体已经过压缩，若用本站 Logo 以外的字母会变回默认字体，这里是 [完整字体](https://file.imsyy.top/font/Other/Pacifico-Regular.ttf)，若无法下载，可将字体目录下的 `Pacifico-Regular-all.ttf` 进行替换
+> 主页的 Logo 字体已经过压缩，若使用当前子集以外的字母会回退到默认字体。完整字体位于 `public/font/Pacifico-Regular-all.ttf`，需要时可用它替换 `src/assets/fonts/Pacifico-Regular.ttf` 后重新构建。
 
 ### 👀 Demo
 

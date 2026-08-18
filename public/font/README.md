@@ -1,6 +1,10 @@
 ## Logo 字体替换
 
-可将该文件夹下的 `Pacifico-Regular-all.ttf` 替换原来的 `Pacifico-Regular.ttf`
+站点实际使用的压缩字体位于 `src/assets/fonts/Pacifico-Regular.ttf`，构建时由 Vite
+生成带内容哈希的资源地址，避免浏览器或 Service Worker 继续使用旧字体。
+
+该文件夹下的 `Pacifico-Regular-all.ttf` 是完整字体备份。需要使用完整字形时，
+请用它替换 `src/assets/fonts/Pacifico-Regular.ttf` 后重新构建。
 
 ## HarmonyOS Sans
 
