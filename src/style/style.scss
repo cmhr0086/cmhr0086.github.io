@@ -91,6 +91,88 @@ a:hover {
 }
 
 // 弹窗样式
+.domain-notice.el-dialog {
+  width: min(440px, calc(100vw - 32px));
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 22%);
+  border-radius: 14px;
+  background: rgb(24 24 28 / 88%);
+  box-shadow: 0 18px 60px rgb(0 0 0 / 42%);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+
+  .el-dialog__header {
+    margin-right: 0;
+    padding: 22px 24px 10px;
+    border-bottom: 1px solid rgb(255 255 255 / 12%);
+  }
+
+  .el-dialog__title,
+  .el-dialog__headerbtn .el-dialog__close {
+    color: #fff !important;
+  }
+
+  .el-dialog__headerbtn {
+    top: 16px;
+    right: 16px;
+  }
+
+  .el-dialog__body {
+    padding: 20px 24px 8px;
+    color: #f3f3f3 !important;
+  }
+
+  .domain-notice-description {
+    color: #f3f3f3 !important;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .el-dialog__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 14px 24px 22px;
+  }
+
+  .el-button {
+    min-width: 104px;
+    height: 40px;
+    margin-left: 0 !important;
+    border-radius: 8px;
+    font-weight: 500;
+  }
+
+  .el-button:not(.el-button--primary) {
+    color: #fff !important;
+    border-color: rgb(255 255 255 / 35%) !important;
+    background: rgb(255 255 255 / 10%) !important;
+  }
+
+  .el-button--primary {
+    color: #fff !important;
+    border-color: #409eff !important;
+    background: #409eff !important;
+  }
+
+  @media (max-width: 480px) {
+    .el-dialog__header {
+      padding: 20px 20px 10px;
+    }
+    .el-dialog__body {
+      padding: 18px 20px 6px;
+    }
+    .el-dialog__footer {
+      flex-direction: column-reverse;
+      padding: 12px 20px 20px;
+    }
+    .el-button {
+      width: 100%;
+    }
+  }
+}
+
 .el-message {
   --el-message-bg-color: #00000040 !important;
   --el-message-text-color: #efefef !important;

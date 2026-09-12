@@ -174,11 +174,11 @@ onBeforeUnmount(() => {
 
 <style lang="scss" scoped>
 .domain-notice {
-  --el-dialog-bg-color: #252525;
+  --el-dialog-bg-color: rgb(24 24 28 / 88%);
   --el-text-color-primary: #fff;
-  --el-text-color-regular: #eee;
-  --el-fill-color-blank: #333;
-  --el-border-color: #666;
+  --el-text-color-regular: #f3f3f3;
+  --el-fill-color-blank: transparent;
+  --el-border-color: rgb(255 255 255 / 30%);
 }
 
 .domain-notice-description {
