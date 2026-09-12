@@ -6,13 +6,13 @@
   },
   {
     "icon": "Cloud",
-    "name": "Openlist网盘",
-    "link": "https://pan.cmhr.work/"
+    "name": "OpenList 网盘",
+    "link": "https://pan.vmnox.com/"
   },
   {
     "icon": "FileArchive",
     "name": "文件暂存",
-    "link": "https://share.cmhr.work/"
+    "link": "https://share.cmhr.cc/"
   },
   {
     "icon": "Image",
@@ -20,9 +20,9 @@
     "link": "https://tools.cmhr.work/"
   },
   {
-    "icon": "Book",
-    "name": "娱乐四件套",
-    "link": "https://m.cmhr.work/"
+    "icon": "LaptopCode",
+    "name": "开源软件",
+    "link": "https://pan.vmnox.com/开源软件"
   },
   {
     "icon": "Film",

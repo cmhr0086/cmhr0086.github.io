@@ -39,6 +39,23 @@
       </Transition>
     </main>
   </Transition>
+  <el-dialog
+    v-model="domainNoticeVisible"
+    class="domain-notice"
+    title="域名访问提示"
+    width="min(440px, calc(100vw - 32px))"
+    align-center
+    append-to-body
+    aria-describedby="domain-notice-description"
+  >
+    <p id="domain-notice-description" class="domain-notice-description">
+      你当前访问的域名是 cmhr.cc，为国际域名，国内用户请访问 vmnox.com。
+    </p>
+    <template #footer>
+      <el-button @click="domainNoticeVisible = false">继续访问</el-button>
+      <el-button type="primary" @click="visitDomesticSite">前往国内站</el-button>
+    </template>
+  </el-dialog>
 </template>
 
 <script setup>
@@ -58,6 +75,25 @@ import config from "@/../package.json";
 
 const store = mainStore();
 const mobileNavLabel = computed(() => (store.mobileOpenState ? "返回主页" : "查看站点"));
+const domainNoticeVisible = ref(false);
+const domainNoticeKey = "cmhr-domain-notice-shown";
+let domainNoticeChecked = false;
+
+const showDomainNotice = () => {
+  if (domainNoticeChecked || window.location.hostname !== "cmhr.cc") return;
+  domainNoticeChecked = true;
+  try {
+    if (window.sessionStorage.getItem(domainNoticeKey) === "1") return;
+    window.sessionStorage.setItem(domainNoticeKey, "1");
+  } catch {
+    // 存储被禁用时，本次页面生命周期内仍只提示一次。
+  }
+  domainNoticeVisible.value = true;
+};
+
+const visitDomesticSite = () => {
+  window.location.assign("https://vmnox.com/");
+};
 
 // 页面宽度
 const getWidth = () => {
@@ -71,6 +107,7 @@ const loadComplete = () => {
     helloInit();
     // 默哀模式
     checkDays();
+    showDomainNotice();
   });
 };
 
@@ -136,6 +173,20 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="scss" scoped>
+.domain-notice {
+  --el-dialog-bg-color: #252525;
+  --el-text-color-primary: #fff;
+  --el-text-color-regular: #eee;
+  --el-fill-color-blank: #333;
+  --el-border-color: #666;
+}
+
+.domain-notice-description {
+  margin: 0;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
 #main {
   position: absolute;
   top: 0;
